@@ -21,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i56+_)$mnrs(3vt8!n0#dd6&@e%tccn(#y6(k%y1!e6!!tx$@k'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'https://django-stripe.herokuapp.com']
+
+
+CSRF_TRUSTED_ORIGINS = ["https://django-stripe.herokuapp.com"]
 
 # Application definition
 
