@@ -8,7 +8,7 @@
 
 **GET** `/item/{id}` возвращает HTML страницу с информацией о выбранном товаре (Item) и кнопку Checkout, по нажатию которой происходит запрос на `/buy/{id}`.
 
-**GET** `/buy/{id}` создает Checkout Session и перенаправляет на Checkout.
+**GET** `/buy/{id}` создает Checkout Session `session=stripe.checkout.Session.create(...)` и перенаправляет на страницу оплаты `HttpResponseRedirect(session.url)`.
 
 ## Запуск приложения
 1. Чтобы запустить приложение, убедитесь, что у вас установлены python и pip.
