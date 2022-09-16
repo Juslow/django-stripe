@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buy cool new product</title>
+  </head>
+  <body>
+    <section>
+      <div class="product">
+        <div class="description">
+          <h3>{{ item.name }}</h3>
+          <h4>{{ item.description }}</h4>
+          <h5>{{ item.price }}$</h5>
+        </div>
+      </div>
+      <form action="{% url 'buy' item.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" id="checkout-button">Checkout</button>
+      </form>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+    <h1>Goods</h1>
+    {% for item in items %}
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <h4>Price: {{ item.price }}$ <a href="{% url 'item' item.id %}" class="button">Buy</a></h4>
+    {% endfor %}
+
+</body>
+</html>
